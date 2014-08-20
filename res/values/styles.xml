@@ -1,0 +1,13 @@
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+<style name="AppTheme" parent="@style/_AppTheme"/>
+
+  <style name="_AppTheme" parent="Theme.AppCompat.Light">
+
+    <item name="android:checkboxStyle">@style/CheckBoxAppTheme</item>
+
+  </style>
+  <style name="CheckBoxAppTheme" parent="android:Widget.CompoundButton.CheckBox">
+      <item name="android:button">@drawable/apptheme_btn_check_holo_light</item>
+  </style>
+
+</resources>
