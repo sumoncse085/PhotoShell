@@ -43,6 +43,7 @@ public class PhotoShellHomeActivity extends Activity {
 	String folderlocation;
 	ProgressDialog pd;
 	int filenum=1;
+	int maxnumimage=30;
 	//boolean btn_go
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -121,7 +122,7 @@ public class PhotoShellHomeActivity extends Activity {
 			
 			try {
 				
-				String filename = "slide"+filenum;
+				String filename = "Slide"+filenum;
 				//int id = getResources().getIdentifier(filename, "drawable", getPackageName());
 				filename=filename+".JPG";
 				Bitmap bm = getBitmapFromAsset( PhotoShellHomeActivity.this,filename);
@@ -137,7 +138,10 @@ public class PhotoShellHomeActivity extends Activity {
 				
 
 				if(file.exists())  {
-					
+					FileOutputStream outStream = new FileOutputStream(file);
+					bm.compress(Bitmap.CompressFormat.PNG, 100, outStream);
+					outStream.flush();
+					outStream.close();
 				}
 				else{
 					
@@ -165,7 +169,7 @@ public class PhotoShellHomeActivity extends Activity {
 			super.onPostExecute(result);
 
 			if (result){
-				if(filenum>=30){
+				if(filenum>=maxnumimage){
 					if(pd!=null){
 						if(pd.isShowing()){
 							pd.dismiss();
