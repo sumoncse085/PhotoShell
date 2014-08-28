@@ -26,7 +26,7 @@ public class SplashActivity extends Activity {
 			public void run() {
        		callIntent();
 				}
-		},1500);
+		},3000);
 		
 	}
 	public void callIntent(){
@@ -39,6 +39,6 @@ public class SplashActivity extends Activity {
 		       		startActivity(intent);
 		       		finish();
 						}
-				},1500);
+				},3000);
 	}
 }

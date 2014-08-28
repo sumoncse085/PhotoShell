@@ -41,7 +41,7 @@ public class CompleteActivity extends Activity {
 			public void run() {
        		callanothertextview();
 				}
-		},1500);
+		},3000);
         btn_go=(Button) findViewById(R.id.btn_go);
         
 		
@@ -56,7 +56,7 @@ public class CompleteActivity extends Activity {
 			public void run() {
        		callanothertextview2();
 				}
-		},1500);
+		},3000);
 	}
 	
 	public void callanothertextview2(){
